@@ -1,0 +1,84 @@
+body {
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    font-family: 'Manrope';
+    background-color: #FFC685;
+}
+
+.grid {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(100, 1fr);
+}
+
+.item {
+    height: 100%;
+    width: 100%;
+}
+
+.itemPos {
+    background-color: #7B8943;
+}
+
+.itemNeg {
+    background-color: #B2340E;
+}
+
+.buttonWrap {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10;
+    display: flex;
+}
+
+button {
+    height: 50px;
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    backdrop-filter: blur(5px);
+    background-color: #ffc6852c;
+    font-family: "Manrope";
+    font-size: larger;
+    transition: all 200ms;
+    cursor: pointer; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon {
+    margin-right: 10px;
+    height: 35px;
+}
+
+.buttonPos:hover {
+    background-color: rgba(9, 92, 9, 0.2);
+    box-shadow: 0px 0px 80px rgba(9, 92, 9, 0.3);
+}
+
+.buttonPos:active {
+    background-color: rgba(9, 92, 9, 0.5);
+}
+
+.buttonNeg:hover {
+    background-color: rgba(176, 0, 32, 0.2);
+    box-shadow: 0px 0px 80px rgba(176, 0, 32, 0.3);
+}
+
+.buttonNeg:active {
+    background-color: rgba(176, 0, 32, 0.5);
+}
+
+.buttonDel:hover {
+    background-color: rgba(95, 95, 95, 0.2);
+    box-shadow: 0px 0px 80px rgba(95, 95, 95, 0.3);
+}
+
+.buttonDel:active {
+    background-color: rgba(95, 95, 95, 0.5);
+}

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="app.js" defer></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300&display=swap"
+            rel="stylesheet"
+            type="text/css"
+        />
+    </noscript> 
+    <link rel="stylesheet" href="styles.css">
+    <title>Student2Student counter</title>
+</head>
+<body>
+    <div class="grid" id="grid"></div>
+    <div class="buttonWrap">
+        <button class="buttonPos" id="pos" onclick="buttonClick(this.id)">
+            <img class="icon" src="icons/add.svg" alt="Plus symbol">
+            Correct [1]
+        </button>
+        <button class="buttonNeg" id="neg" onclick="buttonClick(this.id)">
+            <img class="icon" src="icons/remove.svg" alt="Minus symbol">
+            Incorrect [2]
+        </button>
+        <button class="buttonDel" id="del" onclick="itemDel()">
+            <img class="icon" src="icons/del.svg" alt="Backspace symbol">
+            Delete last entry [BKSP]
+        </button>
+    </div>
+</body>
+</html>
