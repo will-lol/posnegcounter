@@ -6,9 +6,15 @@ const animation = [
     {width: '100%'}
 ];
 
-const animationTiming = {
+const animationTimingAdd = {
     duration: 100,
     iterations: 1
+}
+
+const animationTimingRemove = {
+    duration: 100,
+    iterations: 1,
+    direction: 'reverse'
 }
 
 function newItem(status, parent, counter) {
@@ -21,7 +27,7 @@ function newItem(status, parent, counter) {
         item.classList.add('itemPos');
     }
     parent.appendChild(item);
-    item.animate(animation, animationTiming);
+    item.animate(animation, animationTimingAdd);
 }
 
 function buttonClick(id) {
@@ -49,16 +55,30 @@ function buttonClick(id) {
 
 function itemDel() {
     const item = document.getElementById('item-' + (posCount + negCount));
+    item.animate(animation, animationTimingRemove);
+    
     if (item.classList.contains('itemPos')) {
         posCount -= 1;
     } else if (item.classList.contains('itemNeg')) {
         negCount -= 1;
     }
-    item.remove();
+
+    Promise.all(
+        item.getAnimations().map(
+            function(animation) {
+                return animation.finished
+            }
+        )
+    ).then(
+        function() {
+            return item.remove();
+        }
+    );
 }
 
 window.addEventListener('keydown', (event) => {
     if (event.key === '1') {
+        
         document.getElementById("pos").click();
     } else if (event.key === '2') {
         document.getElementById("neg").click();
