@@ -77,10 +77,9 @@ function itemDel() {
 }
 
 window.addEventListener('keydown', (event) => {
-    if (event.key === '1') {
-        
+    if (event.key === '=') {
         document.getElementById("pos").click();
-    } else if (event.key === '2') {
+    } else if (event.key === '-') {
         document.getElementById("neg").click();
     } else if (event.key === 'Backspace') {
         document.getElementById("del").click();
